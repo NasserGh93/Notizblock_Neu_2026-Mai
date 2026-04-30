@@ -1,9 +1,136 @@
-*{
-    box-sizing: border-box;
+* {
     margin: 0;
-    scroll-behavior: smooth;
+    padding: 0;
+    box-sizing: border-box;
 }
-.input-aria{
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #222;
+    padding: 40px 20px;
+}
+
+.input-aria {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #4c3f91;
+}
+
+input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #ddd;
+    border-radius: 14px;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    max-width: 800px;
+    margin: 30px auto 15px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#content,
+#trash_content {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    padding: 20px;
+    min-height: 120px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Für einzelne Notizen, falls sie als div/p/li erzeugt werden */
+#content div,
+#trash_content div,
+#content p,
+#trash_content p,
+#content li,
+#trash_content li {
+    background: white;
+    margin-bottom: 12px;
+    padding: 15px 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+#trash_content div,
+#trash_content p,
+#trash_content li {
+    opacity: 0.75;
+    text-decoration: line-through;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .input-aria {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
 }
