@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+.input-aria{
+    display: flex;
+    justify-content: center;
+}
